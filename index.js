@@ -1,6 +1,20 @@
 const express = require('express');
+const cors = require('cors');  // Importer le middleware CORS
 const app = express();
 const port = 3000;
+
+// Middleware pour activer CORS
+app.use(cors({
+  origin: 'https://helenalgf.github.io'  // Remplace par l'URL de ton site GitHub Pages
+}));
+
+// Autres configurations et routes de ton API...
+
+// Démarrer le serveur
+app.listen(port, () => {
+  console.log(`API lancée sur http://localhost:${port}`);
+});
+
 
 // Middleware pour parser les données JSON
 app.use(express.json());
